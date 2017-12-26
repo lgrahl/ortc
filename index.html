@@ -160,7 +160,7 @@
       [[!ECMASCRIPT-6.0]].</p>
       <p>In this specification the term <dfn>user agent</dfn> refers to any
       implementation; the term <dfn>browser</dfn> specifically refers to browser
-      implementations.</p>     
+      implementations.</p>
     </section>
     <section>
       <h3>Scope</h3>
@@ -2522,7 +2522,7 @@ interface RTCDtlsTransport : RTCStatsProvider  {
               <p>This event handler, of event handler event type <code>error</code>,
               <em class="rfc2119" title="MUST">MUST</em> be fired after a DTLS
               error. An implementation <em class="rfc2119" title=
-              "SHOULD">SHOULD</em> provide more details on DTLS errors as follows: 
+              "SHOULD">SHOULD</em> provide more details on DTLS errors as follows:
               <ol>
                 <li>A fingerprint validation failure is indicated by setting
                   <code>error.name</code> to "fingerprint-failure".</li>
@@ -2530,7 +2530,7 @@ interface RTCDtlsTransport : RTCStatsProvider  {
                   <code>error.name</code> to "dtls-alert-received".</li>
                 <li>Sending of a DTLS alert is indicated by setting <code>error.name</code>
                    to "dtls-alert-sent".</li>
-                <li>The DTLS alert value is provided by setting <code>error.message</code> 
+                <li>The DTLS alert value is provided by setting <code>error.message</code>
                   (defined in [[!HTML5]] Section 6.1.3.6.2) to "DTLS Alert: <number>".</li>
               </ol>
             </dd>
@@ -6203,7 +6203,7 @@ interface RTCRtpUnhandledEvent : Event {
             <dt><dfn><code>maxBitrate</code></dfn> of type <span class=
             "idlMemberType"><a>unsigned long</a></span></dt>
             <dd>
-              <p>Ramp up resolution/quality/framerate until this bitrate, 
+              <p>Ramp up resolution/quality/framerate until this bitrate,
               if set; if unset, there is no maximum bitrate.
               <code>maxBitrate</code> is computed the same way as the
               Transport Independent Application Specific Maximum (TIAS)
@@ -7159,7 +7159,7 @@ interface RTCDtmfSender {
                 </li>
                 <li>If <var>sender</var>'s <a>[[\RtpSenderIsStopped]] slot is <code>true</code>,
                 <a>throw</a> an <code>InvalidStateError</code> and abort these steps.</li>
-                <li>If <code><var>sender</var>.send</code> has not been called, 
+                <li>If <code><var>sender</var>.send</code> has not been called,
                 <a>throw</a> an <code>InvalidStateError</code> and abort these steps.</li>
                 <li>
                 Let <var>parameters</var> be the argument provided to
@@ -7170,7 +7170,7 @@ interface RTCDtmfSender {
                 not equal to "telephone-event" for any value of <var>j</var>,
                 <a>throw</a> an <code>InvalidStateError</code> and abort
                 these steps.
-                </li>            
+                </li>
                 <li>Let <var>tones</var> be the method's first argument.</li>
                 <li>If <var>tones</var> contains any <a>unrecognized</a>
                 characters, <a>throw</a> an <code>InvalidCharacterError</code>
@@ -7221,7 +7221,7 @@ interface RTCDtmfSender {
               it is necessary to call <code>insertDTMF</code> with a
               string containing both the remaining tones (stored in
               <code>toneBuffer</code>) and the new tones appended
-              together.</p>        
+              together.</p>
               <p>Calling <code><a>insertDTMF</a></code> with an empty tones
               parameter can be used to cancel all tones queued to play after
               the currently playing tone.</p>
@@ -7394,7 +7394,7 @@ var sender = new RTCDtmfSender(sendObject);
 if (sender.canInsertDTMF) {
     var duration = 500;
     sender.insertDTMF("1234", duration);
-} else 
+} else
     trace("DTMF function not available");
 </pre>
       <p>Send the DTMF signal "123" and abort after sending "2".</p>
@@ -7429,8 +7429,8 @@ if (sender.canInsertDTMF) {
   sender.insertDTMF(sender.toneBuffer + "1234");
 } else
     trace("DTMF function not available");
-</pre>      
-      
+</pre>
+
       <p>It is always safe to append to the tone buffer. This example appends
       before any tone playout has started as well as during playout.</p>
       <pre class="example highlight">
@@ -7446,9 +7446,9 @@ if (sender.canInsertDTMF) {
           sender.insertDTMF(sender.toneBuffer + "789");
   };
 } else
-    trace("DTMF function not available");    
+    trace("DTMF function not available");
 </pre>
-      
+
       <p>Send a 1-second "1" tone followed by a 2-second "2" tone:</p>
       <pre class="example highlight">
 var sender = new RTCDtmfSender(sendObject);
@@ -7461,7 +7461,7 @@ if (sender.canInsertDTMF) {
 } else
     trace("DTMF function not available");
 </pre>
-      
+
     </section>
   </section>
   <section id="rtcdatachannel*">
@@ -7475,7 +7475,7 @@ if (sender.canInsertDTMF) {
       <h3>Operation</h3>
       <p>An <code><a>RTCDataChannel</a></code> object is constructed from a
       <code><a>RTCDataTransport</a></code> object (providing the transport for the
-      data channel) and an <code><a>RTCDataChannelParameters</a></code> object.  
+      data channel) and an <code><a>RTCDataChannelParameters</a></code> object.
       An <code><a>RTCDataChannel</a></code> object can be garbage-collected once
       <var>readyState</var> is <code>closed</code> and it is no longer referenced.</p>
       <p>When the constructor is invoked, the following steps MUST be run:</p>
@@ -7498,7 +7498,7 @@ if (sender.canInsertDTMF) {
         existing <code><a>RTCDataChannel</a></code>, <a>throw</a> an
         <code>OperationError</code>.</li>
         <li>If <code><var>parameters</var>.id</code> is equal to 65535,
-        which is greater than the maximum allowed ID of 65534, 
+        which is greater than the maximum allowed ID of 65534,
         <a>throw</a> a <code>TypeError</code>.</li>
       </ol>
     </section>
@@ -7519,7 +7519,7 @@ if (sender.canInsertDTMF) {
       (including retransmissions) are allowed (<code>maxPacketLifeTime</code>).
       These properties can not be used simultaneously and an attempt to do so
       will result in an error.  Not setting any of these properties results in
-      a reliable channel.</p>  
+      a reliable channel.</p>
       <p>There are two ways to establish a connection with
       <code><a>RTCDataChannel</a></code>. The first way is to construct an
       <code><a>RTCDataChannel</a></code> at one of the peers with the
@@ -7629,10 +7629,10 @@ interface RTCDataChannel : EventTarget {
               includes any text sent during the execution of the current task, regardless
               of whether the <a>user agent</a> is able to transmit text asynchronously with
               script execution. This does not include framing overhead incurred by the
-              protocol, or buffering done by the operating system or network hardware. If
-              the channel is closed, this attribute's value will only increase with each
-              call to the send() method (the attribute does not reset to zero once the
-              channel closes).</p>
+              protocol, or buffering done by the operating system or network hardware. This
+              attribute's value will only increase with each call to the send() method as
+              long as the channel is in the <code>open</code> state. However, the attribute
+              does not reset to zero once the channel closes.</p>
             </dd>
             <dt><code>bufferedAmountLowThreshold</code> of type <span class=
             "idlAttrType"><a>unsigned long</a></span></dt>
@@ -8908,59 +8908,9 @@ interface RTCQuicTransport : RTCStatsProvider {
               Since [[QUIC-TRANSPORT]] only defines reliable QUIC streams,
               <code>createStream</code> only supports creation of reliable
               streams.</p>
-              <p>When <code>createStream</code> is called, the user agent MUST run the
-              following steps:</p>
-              <ol>
-                <li>Let <var>transport</var> be the <code><a>RTCQuicTransport</a></code>
-                on which <code>createStream</code> is invoked.</li>
-                <li>If <code><var>transport</var>.state</code> is <code>closed</code>
-                <a>throw</a> an <code>InvalidStateError</code>.</li>
-                <li>Let <var>parameters</var> be the first argument.</li>
-               <li>
-                  <p>Let <var>stream</var> be a newly created
-                  <code><a>RTCQuicStream</a></code> object.</p>
-                </li>
-                <li>
-                  <p>Let <var>stream</var> have a <dfn>[[\QuicStreamState]]</dfn> internal
-                  slot initialized to <code>new</code>.</p>
-                </li>
-                <li>
-                  <p>Let <var>stream</var> have a <dfn>[[\Readable]]</dfn> internal
-                  slot initialized to <code>false</code>.</p>
-                </li>
-                <li>
-                  <p>Let <var>stream</var> have a <dfn>[[\Writeable]]</dfn> internal
-                  slot initialized to <code>false</code>.</p>
-                </li>
-                <li>
-                  <p>Let <var>stream</var> have a <dfn>[[\MaxWriteBufferedAmount]]</dfn> internal
-                  slot initialized to the maximum write buffer size.</p>
-                </li>
-                <li>
-                  <p>Let <var>stream</var> have a <dfn>[[\MaxReadBufferedAmount]]</dfn> internal
-                  slot initialized to the maximum read buffer size.</p>
-                </li>
-                <li>
-                  <p>Let <var>stream</var> have a <dfn>[[\TargetReadBufferedAmount]]</dfn> internal
-                  slot initialized to the maximum read buffer size.</p>
-                </li>
-                <li>
-                  <p>Let <var>stream</var> have a <dfn>[[\WriteBufferedAmount]]</dfn> internal
-                  slot initialized to zero.</p>
-                </li>
-                <li>
-                  <p>Let <var>stream</var> have a <dfn>[[\ReadBufferedAmount]]</dfn> internal
-                  slot initialized to zero.</p>
-                </li>
-                <li>
-                  <p>Return <var>stream</var> and continue the following steps
-                  in the background.</p>
-                </li>
-                <li>
-                  <p>Create <var>stream</var>'s associated underlying data
-                  transport.</p>
-                </li>
-              </ol>
+              <p>When <code>createStream</code> is called, the user agent MUST follow the
+              steps described by <code><a>RTCQuicStream</a></code>'s <i>Operation</i>
+              section</p>
               <div>
                 <em>No parameters.</em>
               </div>
@@ -9035,7 +8985,7 @@ interface RTCQuicStreamEvent : Event {
                   <tr>
                     <td class="prmName">type</td>
                     <td class="prmType"><code>DOMString</code></td>
-                    <td class="prmNullFalse"><span role="img" aria-label=  
+                    <td class="prmNullFalse"><span role="img" aria-label=
                     "False">&#10008;</span></td>
                     <td class="prmOptFalse"><span role="img" aria-label=
                     "False">&#10008;</span></td>
@@ -9336,7 +9286,7 @@ function accept(mySignaller, remote) {
     trace('Certificate could not be created');
   });
 
-  // Create DTLS and SCTP transport
+  // Create DTLS and QUIC transport
   var dtls = new RTCDtlsTransport(ice, certs);
   var quic = new RTCQuicTransport(ice, certs);
 
@@ -9347,7 +9297,7 @@ function accept(mySignaller, remote) {
     // ... marshall RtpSender/RtpReceiver capabilities as illustrated in Section 6.5 Example 9.
   });
 
-   // Start the ICE, DTLS and SCTP transports
+   // Start the ICE, DTLS and QUIC transports
   ice.start(iceGatherer, remote.ice, RTCIceRole.controlled);
   dtls.start(remote.dtls);
   // Start the QuicTransport
@@ -9366,12 +9316,111 @@ function accept(mySignaller, remote) {
     <section id="rtcquicstream-overview*">
       <h3>Overview</h3>
       <p>An <code><a>RTCQuicStream</a></code> instance is associated to
-      an <code><a>RTCQuicTransport</a></code> instance.</p>
+      an <code><a>RTCQuicTransport</a></code> instance. It also needs to construct both a
+      <code>ReadableStream</code> and a <code>WritableStream</code> when initializing.</p>
+      <p>The following section will describe general operation and initialization procedures.</p>
+    </section>
+    <section>
+      <h3 id="rtcquicstream-stream*">Underlying Stream Instances</h3>
+      <p>The <code><a>RTCQuicStream</a></code> uses [[!STREAMS]], a web standard that
+      defines base stream primitives which can be used to expose and compose streaming data in
+      a unified way.</p>
+      <p>TODO: Describe stream state handling for both readable and writable stream controller</p>
+      <p>TODO: Create RTCQuicReadableStream & RTCQuicWritableStream instead</p>
+      <section>
+      <h4 id="rtcquicstream-readablestream">Readable Stream Construction</h4>
+      <dfn>[[\ReadableStreamPromise]]</dfn>
+      <dfn>[[\ReadableStream]]</dfn>
+      <dfn>[[\ReadableStreamController]]</dfn></p>
+      </section>
+      <section>
+      <h4 id="rtcquicstream-writablestream">Writable Stream Construction</h4>
+      <p><dfn>[[\WritableStreamPromise]]</dfn>
+      <dfn>[[\WritableStream]]</dfn>
+      <dfn>[[\WritableStreamController]]</dfn></p>
+      <p>TODO: Switch to <code>WritableByteStreamController</code> once that has been specified.</p>
+      </section>
     </section>
     <section id="rtcquicstream-operation*">
       <h3>Operation</h3>
       <p>An <code><a>RTCQuicStream</a></code> instance is constructed
-      using the <code><a>RTCQuicTransport</a>.createStream</code> method.</p>
+      using the <code><a>RTCQuicTransport</a>.createStream</code> method.
+      It is also implicitly constructed when a remote <code><a>RTCQuicStream</a></code> has been
+      created and the <code>onstream</code> is about to be raised.
+      The user agent MUST run the following steps:</p>
+      <ol>
+        <li>Let <var>transport</var> be the <code><a>RTCQuicTransport</a></code>
+        on which <code>createStream</code> is invoked or a remote <code><a>RTCQuicStream</a></code>
+        has been created.</li>
+        <li>If <code><var>transport</var>.state</code> is <code>closed</code>
+        <a>throw</a> an <code>InvalidStateError</code>.</li>
+        <li>
+          <p>Let <var>stream</var> be a newly created
+          <code><a>RTCQuicStream</a></code> object.</p>
+        </li>
+        <li>
+          <p>Let <var>stream</var> have a <dfn>[[\QuicStreamState]]</dfn> internal
+          slot initialized to <code>new</code> in case the stream is being created by a call to the
+          <code><var>transport</var>.createStream</code> method. Let the slot be initialized to
+          <code>open</code> in case the stream is being implicitly created by the remote side
+          as part of an <code>onstream</code> event.</p>
+        </li>
+        <li>
+          <p>Let <var>stream</var> have a <a>[[\ReadableStreamPromise]]</a> internal slot
+          initialized to a new <code>Promise</code> instance.</p>
+        </li>
+        <li>
+          <p>Let <var>stream</var> have a <a>[[\WritableStreamPromise]]</a> internal slot
+          initialized to a new <code>Promise</code> instance.</p>
+        </li>
+        <li>
+          <p>Let <var>stream</var> have a <a>[[\ReadableStream]]</a> internal
+          slot initialized to a new <code><a>RTCQuicReadableStream</a></code> instance CONTINUE HERE.</p>
+        </li>
+        <li>
+          <p>Let <var>stream</var> have a <a>[[\WritableStream]]</a> internal
+          slot initialized to a <code>WritableStream</code> instance as described by the previous
+          section.</p>
+        </li>
+        <li>
+          <p>Let <var>stream</var> have a <a>[[\ReadableStreamController]]</a> internal slot
+          initialized to a <code>ReadableByteStreamController</code> instance as described by the
+          previous section.</p>
+        </li>
+        <li>
+          <p>Let <var>stream</var> have a <a>[[\WritableStreamController]]</a> internal slot
+          initialized to a <code>WritableStreamDefaultController</code> instance as described by
+          the previous section.</p>
+        </li>
+        <li>
+          <p>Let <var>stream</var> have a <dfn>[[\DefaultReadChunkSize]]</dfn> internal slot
+          initialized to the default chunk size that should be used for read buffering.
+        </li>
+        <li>
+          <p>Let <var>stream</var> have a <dfn>[[\TargetWriteBufferedAmount]]</dfn>
+          initialized to the default target write buffer size.</p>
+        </li>
+        <li>
+          <p>Let <var>stream</var> have a <dfn>[[\WriteBufferedAmount]]</dfn> internal
+          slot initialized to zero.</p>
+        </li>
+        <li>
+          <p>Let <var>stream</var> have a <dfn>[[\MaxWriteBufferedAmount]]</dfn> internal
+          slot initialized to the maximum write buffer size.</p>
+        </li>
+        <li>
+          <p>Let <var>stream</var> have a <dfn>[[\MaxReadBufferedAmount]]</dfn> internal
+          slot initialized to the maximum read buffer size.</p>
+        </li>
+        <li>
+          <p>Return <var>stream</var> and continue the following steps
+          in the background.</p>
+        </li>
+        <li>
+          <p>Create <var>stream</var>'s associated underlying data
+          transport.</p>
+        </li>
+      </ol>
     </section>
     <section id="rtcquicstream-interface-definition*">
       <h3>Interface Definition</h3>
@@ -9383,16 +9432,13 @@ interface RTCQuicStream {
     readonly        attribute RTCQuicStreamState  state;
     readonly        attribute unsigned long       readBufferedAmount;
     readonly        attribute unsigned long       maxReadBufferedAmount;
-    readonly        attribute unsigned long       targetReadBufferedAmount;
     readonly        attribute unsigned long       writeBufferedAmount;
     readonly        attribute unsigned long       maxWriteBufferedAmount;
-    long                  readInto (Uint8Array data);
-    void                  write (Uint8Array data);
-    void                  finish ();
-    void                  reset ();
-    Promise&lt;void&gt;   waitForReadable(unsigned long amount);
-    Promise&lt;void&gt;   waitForWritable(unsigned long amount, optional unsigned long targetWriteBufferedAmount);
-    void                  setTargetReadBufferedAmount(unsigned long amount);
+    readonly        attribute unsigned long       targetWriteBufferedAmount;
+    readonly        attribute ReadableStream      readableStream;
+    readonly        attribute WritableStream      writableStream;
+    void                  reset();
+    void                  setTargetWriteBufferedAmount(unsigned long amount);
                     attribute EventHandler        onstatechange;
 };</pre>
         <section>
@@ -9425,64 +9471,85 @@ interface RTCQuicStream {
             long</a></span>, readonly</dt>
             <dd>
               <p>The <dfn id="dom-quicstream-readbufferedamount"><code>readBufferedAmount</code></dfn>
-              attribute represents the number of bytes buffered for access by 
-              <code>readInto</code> but that, as of the last time the event loop
-              started executing a task, had not yet been read. This does not include
+              attribute represents the number of bytes buffered for access by
+              <code>readableStream</code>. This does not include
               framing overhead incurred by the protocol, or buffers associated with
-              the network hardware. On getting, it <em class="rfc2119" title="MUST">MUST</em> 
-              return the value of the <code><a>RTCQuicStream</a></code>'s 
-              <a>[[\ReadBufferedAmount]]</a> internal slot.
-              If the <code><a>RTCQuicStream</a></code> is in the <code>closed</code> state,
-              this attribute's value will only decrease with each call to the 
-              <code>readInto</code> method (the attribute does not reset to zero once the 
-              <code><a>RTCQuicStream</a></code> closes).</p>
+              the network hardware. On getting, the user agent
+              <em class="rfc2119" title="MUST">MUST</em> run the following steps:
+              <ol>
+               <li>Let <var>controller</var> be the <code><a>RTCQuicStream</a></code>'s
+               <a>[[\ReadableStreamController]]</a> internal slot.</li>
+               <li>Let <var>highWaterMark</var> be the value of the
+               <code><a>RTCQuicStream</a></code>'s <a>[[\MaxReadBufferedAmount]]</a> internal
+               slot.</li>
+               <li>Return <var>highWaterMark</var> minus
+               <code><var>controller</var>.desiredSize</code></li>
+              </ol>
             </dd>
             <dt><code>maxReadBufferedAmount</code> of type <span class="idlAttrType"><a>unsigned
             long</a></span>, readonly</dt>
             <dd>
               <p>The <dfn id="dom-quicstream-maxreadbufferedamount"><code>maxReadBufferedAmount</code></dfn>
               attribute represents the maximum number of bytes that the implementation allows
-              to be buffered for access by <code>readInto</code>. On getting, it
+              to be buffered for access by <code>readableStream</code>. On getting, it
               <em class="rfc2119" title="MUST">MUST</em> return the value of the
               <code><a>RTCQuicStream</a></code>'s <a>[[\MaxReadBufferedAmount]]</a> internal slot.</p>
-            </dd>
-            <dt><code>targetReadBufferedAmount</code> of type <span class="idlAttrType"><a>unsigned
-            long</a></span>, readonly</dt>
-            <dd>
-              <p>The
-              <dfn id="dom-quicstream-targetreadbufferedamount"><code>targetReadBufferedAmount</code></dfn>
-              attribute represents the target number of bytes in the read buffer, which enables
-              control of back-pressure on the sender via the maximum receive window. On getting,
-              it <em class="rfc2119" title="MUST">MUST</em> return the value of the
-              <code><a>RTCQuicStream</a></code>'s <a>[[\TargetReadBufferedAmount]]</a> internal slot.</p>
             </dd>
             <dt><code>writeBufferedAmount</code> of type <span class="idlAttrType"><a>unsigned
             long</a></span>, readonly</dt>
             <dd>
               <p>The <dfn id="dom-quicstream-writebufferedamount"><code>writeBufferedAmount</code></dfn>
               attribute represents the number of bytes of application data
-              that have been queued using <code>write</code> but that, as of the last
-              time the event loop started executing a task, had not yet been transmitted
-              to the network. This includes any data sent during the execution of the
-              current task, regardless of whether the <a>user agent</a> is able to
-              transmit text asynchronously with script execution. This does not
-              include framing overhead incurred by the protocol, or buffering done
-              by the operating system or network hardware. On getting, it
-              <em class="rfc2119" title="MUST">MUST</em> return the value of the
+              that have been queued by writing to <code>writableStream</code> that has not yet
+              been transmitted to the network. This does not include framing overhead incurred
+              by the protocol, or buffering done by the operating system or network hardware.
+              On getting, it <em class="rfc2119" title="MUST">MUST</em> return the value of the
               <code><a>RTCQuicStream</a></code>'s <a>[[\WriteBufferedAmount]]</a> internal slot.
-              If the <code><a>RTCQuicStream</a></code> is in the <code>closed</code>
-              state, this attribute's value will only increase with each call to the
-              <code>write</code> method (the attribute does not reset to zero once the
-              <code><a>RTCQuicStream</a></code> closes).</p>
+              This attribute's value will only increase by writing to the
+              <code>writableStream</code> as long as the associated
+              <a>[[\WritableStreamController]]</a> has not been closed or errored. However, the
+              attribute does not reset to zero once the <code><a>RTCQuicStream</a></code> closes.</p>
+            <dt><code>targetWriteBufferedAmount</code> of type <span class="idlAttrType"><a>unsigned
+            long</a></span>, readonly</dt>
+            <dd>
+              <p>Let <var>source</var> be the <code><a>RTCQuicStream</a></code>
+              <a>[[\WritableStream]] internal slot's underlying source object.</a>
+              The <dfn id="dom-quicstream-targetwritebufferedamount"><code>targetWriteBufferedAmount</code></dfn>
+              attribute represents the target maximum number of bytes the write buffer may contain
+              before the promise returned by <code><var>source</var>.write</code> will be
+              resolved. On getting, it <em class="rfc2119" title="MUST">MUST</em>
+              return the value of the <code><a>RTCQuicStream</a></code>'s
+              <a>[[\TargetWriteBufferedAmount]]</a> internal slot.</p>
             </dd>
             <dt><code>maxWriteBufferedAmount</code> of type <span class="idlAttrType"><a>unsigned
             long</a></span>, readonly</dt>
             <dd>
-              <p>The <dfn id="dom-quicstream-maxwritebufferedamount"><code>maxWriteBufferedAmount</code></dfn>
+              <p>Let <var>source</var> be the <code><a>RTCQuicStream</a></code>
+              <a>[[\WritableStream]] internal slot's underlying source object.</a>
+              The <dfn id="dom-quicstream-maxwritebufferedamount"><code>maxWriteBufferedAmount</code></dfn>
               attribute represents the maximum number of bytes that the implementation allows
-              to be buffered by <code>write</code>. On getting, it <em class="rfc2119" title="MUST">MUST</em> 
-              return the value of the <code><a>RTCQuicStream</a></code>'s
-              <a>[[\MaxWriteBufferedAmount]]</a> internal slot.</p>
+              to be buffered by <code><var>source</var>.write</code>. On getting, it
+              <em class="rfc2119" title="MUST">MUST</em> return the value of the
+              <code><a>RTCQuicStream</a></code>'s <a>[[\MaxWriteBufferedAmount]]</a>
+              internal slot.</p>
+            </dd>
+            <dt><code>readableStream</code> of type
+            <span class="idlAttrType"><a>ReadableStream</a></span>, readonly</dt>
+            <dd>
+              <p>The <dfn id="dom-quicstream-readablestream"><code>readableStream</code></dfn>
+              attribute contains the underlying stream instance to read data from. On getting, it
+              <em class="rfc2119" title="MUST">MUST</em> return the value of the
+              <code><a>RTCQuicStream</a></code>'s <a>[[\ReadableStream]]</a>
+              internal slot.</p></p>
+            </dd>
+            <dt><code>writableStream</code> of type
+            <span class="idlAttrType"><a>WritableStream</a></span>, readonly</dt>
+            <dd>
+              <p>The <dfn id="dom-quicstream-writablestream"><code>writableStream</code></dfn>
+              attribute contains the underlying stream instance to write data into. On getting, it
+              <em class="rfc2119" title="MUST">MUST</em> return the value of the
+              <code><a>RTCQuicStream</a></code>'s <a>[[\WritableStream]]</a>
+              internal slot.</p></p>
             </dd>
           </dl>
        </section>
@@ -9490,128 +9557,6 @@ interface RTCQuicStream {
           <h2>Methods</h2>
           <dl data-link-for="RTCQuicStream" data-dfn-for="RTCQuicStream" class=
           "methods">
-            <dt><dfn><code>readInto</code></dfn></dt>
-            <dd>
-              <p>Reads from <code><a>RTCQuicStream</a></code> into the buffer specified
-              by the first argument and returns the number of bytes read; a negative
-              number indicates end-of-file. If there is no data to be read then
-              <code>readInto</code> returns zero. When the <code>readInto</code>
-              method is called, the user agent
-              <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
-              <ol>
-               <li>Let <var>stream</var> be the <code><a>RTCQuicStream</a></code> object
-               on which <code>readInto</code> is invoked.</li>
-               <li>If <var>stream</var>'s <a>[[\Readable]]</a> slot is <code>false</code>,
-               <a>throw</a> an <code>InvalidStateError</code>, then abort these steps.</li>
-               <li>Let <var>data</var> be the first argument.</li>
-               <li>If the read buffer is empty and end-of-file has been encountered, return
-               a negative number, set <var>stream</var>'s <a>[[\Readable]]</a> slot to 
-               <code>false</code> and abort these steps.</li>
-               <li>Transfer data from the read buffer into <var>data</var>.</li>
-               <li>Decrease the value of <var>stream</var>'s <a>[[\ReadBufferedAmount]]</a>
-               slot by the length of <var>data</var> in bytes.</li>
-               <li>Return the length of <var>data</var> in bytes.</li>
-              </ol>
-              <table class="parameters">
-               <tbody>
-                  <tr>
-                    <th>Parameter</th>
-                    <th>Type</th>
-                    <th>Nullable</th>
-                    <th>Optional</th>
-                    <th>Description</th>
-                  </tr>
-                  <tr>
-                    <td class="prmName">data</td>
-                    <td class="prmType"><code>Uint8Array</code></td>
-                    <td class="prmNullFalse"><span role="img" aria-label=
-                    "False">&#10008;</span></td>
-                    <td class="prmOptFalse"><span role="img" aria-label=
-                    "False">&#10008;</span></td>
-                    <td class="prmDesc"></td>
-                  </tr>
-                </tbody>
-              </table>
-              <div>
-                <em>Return type:</em> <code>long</code>
-              </div>
-            </dd>
-            <dt><dfn><code>write</code></dfn></dt>
-            <dd>
-              <p>When the <code>write</code> method is called, the <a>user agent</a>
-              MUST run the following steps:</p>
-              <ol>
-               <li>Let <var>data</var> be the first argument.</li>
-               <li>Let <var>stream</var> be the <code><a>RTCQuicStream</a></code>
-               object on which <var>data</var> is to be sent.</li>
-               <li>If <var>stream</var>'s <a>[[\Writeable]]</a> slot is <code>false</code>,
-               <a>throw</a> an <code>InvalidStateError</code> and abort these steps.</li>
-               <li>If the length of <var>data</var> added to <a>[[\WriteBufferedAmount]]</a>
-               exceeds <a>[[\MaxWriteBufferedAmount]]</a>, <a>throw</a> an
-               <code>OperationError</code> and abort these steps.</li>
-               <li>Increase the value of <var>stream</var>'s
-               <a>[[\WriteBufferedAmount]]</a> slot by the length of
-               <var>data</var> in bytes.</li>
-               <li>Queue <var>data</var> for transmission on <var>stream</var>'s
-               underlying data transport.
-               <div class="note">The actual transmission of data occurs in
-               parallel. If sending data leads to a QUIC-level error, the
-               application will be notified asynchronously through the
-               <code><a>RTCQuicTransport</a></code>'s <code><a>onerror</a></code>
-               EventHandler.</div></li>
-              </ol>
-              <table class="parameters">
-                <tbody>
-                  <tr>
-                    <th>Parameter</th>
-                    <th>Type</th>
-                    <th>Nullable</th>
-                    <th>Optional</th>
-                    <th>Description</th>
-                  </tr>
-                  <tr>
-                    <td class="prmName">data</td>
-                    <td class="prmType"><code>Uint8Array</code></td>
-                    <td class="prmNullFalse"><span role="img" aria-label=
-                    "False">&#10008;</span></td>
-                    <td class="prmOptFalse"><span role="img" aria-label=
-                    "False">&#10008;</span></td>
-                    <td class="prmDesc"></td>
-                  </tr>
-                </tbody>
-              </table>
-              <div>
-                <em>Return type:</em> <code>void</code>
-              </div>
-            </dd>
-            <dt><dfn><code>finish</code></dfn></dt>
-            <dd>
-              <p>Intitiates the closing procedure for the
-              <code><a>RTCQuicStream</a></code>. It may be called
-              regardless of whether the <code><a>RTCQuicStream</a></code> object
-              was created by the local or remote peer. When the <code>finish()</code>
-              method is called, the user agent <em class="rfc2119" title="MUST">MUST</em>
-              run the following steps:</p>
-              <ol>
-                <li>Let <var>stream</var> be the <code><a>RTCQuicStream</a></code> object
-                which is about to be closed.</li>
-                <li>If <var>stream</var>'s  <a>[[\QuicStreamState]]</a> is <code>new</code>,
-                set <var>stream</var>'s  <a>[[\QuicStreamState]]</a> to <code>closed</code>,
-                and abort these steps.</li>
-                <li>If <var>stream</var>'s  <a>[[\QuicStreamState]]</a> is <code>closed</code>,
-                then abort these steps.</li>
-                <li>Set <var>stream</var>'s <a>[[\Writeable]]</a> slot to <code>false</code>.</li>
-                <li>Set <var>stream</var>'s <a>[[\QuicStreamState]]</a> slot to <code>closing</code>.</li>
-                <li>If the closing procedure has not started yet, start it by sending a STREAM
-                frame with the FIN bit set.</li>
-              </ol>
-              <div>
-                <em>No parameters.</em>
-              </div>
-              <div>
-                <em>Return type:</em> <code>void</code>
-              </div>
-            </dd>
             <dt><dfn><code>reset</code></dfn></dt>
             <dd>
               <p>Resets the <code><a>RTCQuicStream</a></code>. It may be called
@@ -9622,13 +9567,27 @@ interface RTCQuicStream {
               <ol>
                 <li>Let <var>stream</var> be the <code><a>RTCQuicStream</a></code> object
                 which is about to be reset.</li>
-                <li>If <var>stream</var>'s  <a>[[\QuicStreamState]]</a> is <code>new</code>,
-                set <var>stream</var>'s  <a>[[\QuicStreamState]]</a> to <code>closed</code>,
+                <li>Let <var>writableStreamReady</var> be the <var>stream</var>'s
+                <a>[[\ReadableStreamPromise]]</a> slot.</li>
+                <li>Let <var>readableStreamReady</var> be the <var>stream</var>'s
+                <a>[[\ReadableStreamPromise]]</a> slot.</li>
+                <li>If <var>writableStreamReady</var> is still pending, reject
+                <var>writableStreamReady</var>.</li>
+                <li>If <var>readableStreamReady</var> is still pending, reject
+                <var>readableStreamReady</var>.</li>
+                <li>If <var>stream</var>'s <a>[[\QuicStreamState]]</a> is <code>new</code>,
+                set <var>stream</var>'s <a>[[\QuicStreamState]]</a> to <code>closed</code>,
                 and abort these steps.</li>
-                <li>If <var>stream</var>'s  <a>[[\QuicStreamState]]</a> slot is <code>closed</code>,
+                <li>If <var>stream</var>'s <a>[[\QuicStreamState]]</a> slot is <code>closed</code>,
                 then abort these steps.</li>
-                <li>Set <var>stream</var>'s <a>[[\Writeable]]</a> and <a>[[\Readable]]</a>
-                slots to <code>false</code>.</li>
+                <li>Let <var>writableStreamController</var> be the <var>stream</var>'s
+                <a>[[\WritableStreamController]]</a> slot.</li>
+                <li>Let <var>readableStreamController</var> be the <var>stream</var>'s
+                <a>[[\ReadableStreamController]]</a> slot.</li>
+                <li>If <var>writableStreamController</var> has not been aborted or errored,
+                error it by calling <code><var>writableStreamController</var>.error</code></li>
+                <li>If <var>readableStreamController</var> has not been cancelled or errored,
+                error it by calling <code><var>readableStreamController</var>.error</code></li>
                 <li>Set <var>stream</var>'s <a>[[\QuicStreamState]]</a> slot to <code>closing</code>.</li>
                 <li>If the closing procedure has not started yet, start it by sending a RST_STREAM
                 frame.</li>
@@ -9640,131 +9599,26 @@ interface RTCQuicStream {
                 <em>Return type:</em> <code>void</code>
               </div>
             </dd>
-           <dt><dfn><code>waitForReadable</code></dfn></dt>
+            <dt><dfn><code>setTargetWriteBufferedAmount</code></dfn></dt>
             <dd>
-              <p><code>waitForReadable</code> resolves the promise 
-              when the data queued in the read buffer increases above
-              a computed threshold. When the <code>waitForReadable</code> method is called,
-              the <a>user agent</a> MUST run the following steps:</p>
-              <ol>
-                <li>Let <var>stream</var> be the <code><a>RTCQuicStream</a></code>
-                on which <code>waitForReadable</code> is invoked.</li>
-                <li>Let <var>amount</var> be the first argument.</li>
-                <li>Let <var>p</var> be a new promise.</li>
-                <li>If <var>amount</var> is larger than the value of
-                <var>stream</var>'s <a>[[\TargetReadBufferedAmount]]</a> slot,
-                <a>reject</a> <var>p</var> with a newly created <code>OperationError</code>.</li>
-                <li>Let <var>threshold</var> be the value of <var>stream</var>'s
-                <a>[[\TargetReadBufferedAmount]]</a> slot minus <var>amount</var>.</li>
-                <li>When <a>[[\ReadBufferedAmount]]</a> increases from below the value
-                of <var>threshold</var> to greater than or equal to it,
-                <a>resolve</a> <var>p</var> with <code>undefined</code>.</li>
-              </ol>
-              <table class="parameters">
-                <tbody>
-                  <tr>
-                    <th>Parameter</th>
-                    <th>Type</th>
-                    <th>Nullable</th>
-                    <th>Optional</th>
-                    <th>Description</th>
-                  </tr>
-                  <tr>
-                    <td class="prmName">amount</td>
-                    <td class="prmType"><code>unsigned long</code></td>
-                    <td class="prmNullFalse"><span role="img" aria-label=
-                    "False">&#10008;</span></td>
-                    <td class="prmOptFalse"><span role="img" aria-label=
-                    "False">&#10008;</span></td>
-                    <td class="prmDesc"></td>
-                  </tr>
-                </tbody>
-              </table>
-              <div>
-                <em>Return type:</em> <code>Promise&lt;void&gt;</code>
-              </div>
-            </dd>
-            <dt><dfn><code>waitForWritable</code></dfn></dt>
-            <dd>
-              <p><code>waitForWritable</code> resolves the promise when
-              the data queued in the write buffer falls below a threshold
-              computed from the arguments to the method.
-              When the <code>waitForWritable</code> method is called,
-              the <a>user agent</a> MUST run the following steps:</p>
-              <ol>
-                <li>Let <var>stream</var> be the <code><a>RTCQuicStream</a></code>
-                object on which <code>waitForWritable</code> was invoked.</li>
-                <li>Let <var>amount</var> be the first argument.</li>
-                <li>Let <var>target</var> be the second argument, if provided.
-                If the second argument is not provided, let <var>target</var>
-                be the value of <var>stream</var>'s <a>[[\MaxWriteBufferedAmount]]</a>
-                slot.</li>
-                <li>Let <var>p</var> be a new promise.</li>
-                <li>If <var>amount</var> is larger than <var>target</var> then
-                <a>reject</a> <var>p</var> with a newly created <code>OperationError</code>.</li>
-                <li>Let <var>threshold</var> be <var>target</var> minus <var>amount</var>.</li>
-                <li>When <var>stream</var>'s <a>[[\WriteBufferedAmount]]</a> slot decreases
-                from above <var>threshold</var> to less than or equal to it, 
-                <a>resolve</a> <var>p</var> with <code>undefined</code>.</li>
-              </ol>
-              <table class="parameters">
-                <tbody>
-                  <tr>
-                    <th>Parameter</th>
-                    <th>Type</th>
-                    <th>Nullable</th>
-                    <th>Optional</th>
-                    <th>Description</th>
-                  </tr>
-                  <tr>
-                    <td class="prmName">amount</td>
-                    <td class="prmType"><code>unsigned long</code></td>
-                    <td class="prmNullFalse"><span role="img" aria-label=
-                    "False">&#10008;</span></td>
-                    <td class="prmOptFalse"><span role="img" aria-label=
-                    "False">&#10008;</span></td>
-                    <td class="prmDesc"></td>
-                  </tr>
-                  <tr>
-                    <td class="prmName">targetWriteBufferedAmount</td>
-                    <td class="prmType"><code>unsigned long</code></td>
-                    <td class="prmNullFalse"><span role="img" aria-label=
-                    "False">&#10008;</span></td>
-                    <td class="prmOptTrue"><span role="img" aria-label=
-                    "True">&#10004;</span></td>
-                    <td class="prmDesc"></td>
-                  </tr>
-                </tbody>
-              </table>
-              <div>
-                <em>Return type:</em> <code>Promise&lt;void&gt;</code>
-              </div>
-            </dd>
-            <dt><dfn><code>setTargetReadBufferedAmount</code></dfn></dt>
-            <dd>
-              <p><code>setTargetReadBufferedAmount</code> sets the value
-              of the <code><a>RTCQuicStream</a></code>'s <a>[[\TargetReadBufferedAmount]]</a>
-              internal slot, which represents the target number of bytes in the
-              <code><a>RTCQuicStream</a></code>'s receive buffer.
-              When the <code>setTargetReadBufferedAmount</code> method is called,
+              <p>Let <var>source</var> be the <code><a>RTCQuicStream</a></code>
+              <a>[[\WritableStream]]</a> internal slot's underlying source object.
+              <code>setTargetWriteBufferedAmount</code> sets the value
+              of the <code><a>RTCQuicStream</a></code>'s <a>[[\TargetWriteBufferedAmount]]</a>
+              internal slot, which represents the target maximum number of bytes in the
+              <code><a>RTCQuicStream</a></code>'s send buffer before a promise returned by
+              <code><var>source</var>.write</code> will be resolved.
+              When the <code>setTargetWriteBufferedAmount</code> method is called,
               the <a>user agent</a> MUST run the following steps:</p>
               <ol>
                <li>Let <var>stream</var> be the <code><a>RTCQuicStream</a></code>
-               on which <code>setTargetReadBufferedAmount</code> is invoked.</p>
+               on which <code>setTargetWriteBufferedAmount</code> is invoked.</p>
                <li>Let <var>amount</var> be the first argument.</li>
                <li>If <var>amount</var> is greater than the <var>stream</var>'s
-               <a>[[\MaxReadBufferedAmount]]</a> slot, <a>throw</a> an
+               <a>[[\MaxWriteBufferedAmount]]</a> slot, <a>throw</a> an
                <code>OperationError</code> and abort these steps.</li>
-               <li>Set <var>stream</var>'s <a>[[\TargetReadBufferedAmount]]</a> slot to 
+               <li>Set <var>stream</var>'s <a>[[\TargetWriteBufferedAmount]]</a> slot to
                <var>amount</var>.</li>
-               <li>If <var>amount</var> is greater than or equal to <var>stream</var>'s
-               <a>[[\ReadBufferedAmount]]</a> slot, set <var>stream</var>'s maximum
-               receive window to <var>amount</var>.</li>
-               <li>If <var>amount</var> is less than <var>stream</var>'s
-               <a>[[\ReadBufferedAmount]]</a> slot, set <var>stream</var>'s receive
-               window to zero until <a>[[\ReadBufferedAmount]]</a> becomes less than
-               or equal to <var>amount</var> and then set the maximum receive window
-               to <var>amount</var>.</li>
               </ol>
               <table class="parameters">
                 <tbody>
@@ -9830,7 +9684,8 @@ interface RTCQuicStream {
                 <p>The underlying QUIC stream has queued a STREAM frame for
                 transmission, but has not yet received an acknowledgement.
                 On transitioning to the <code>opening</code> state, the
-                <a>[[\Writeable]]</a> slot is set to <code>true</code>.</p>
+                <a>[[\WritableStreamPromise]]</a> slot <em class="rfc2119" title="MUST">MUST</em>
+                be resolved with <code>undefined</code>.</p>
               </td>
             </tr>
             <tr>
@@ -9841,8 +9696,9 @@ interface RTCQuicStream {
                 as described in [[QUIC-TRANSPORT]] Section 10.2. This is the initial state of an
                 <code><a>RTCQuicStream</a></code> object dispatched as a part of an
                 <code>RTCQuicStreamEvent</code>. On transitioning to the <code>open</code>
-                state, the <a>[[\Readable]]</a> and <a>[[\Writeable]]</a> slots are set to
-                <code>true</code>.</p>
+                state, both the <a>[[\WritableStreamPromise]]</a> slot and the
+                <a>[[\ReadableStreamPromise]]</a> slot <em class="rfc2119" title="MUST">MUST</em>
+                be resolved with <code>undefined</code>.</p>
               </td>
             </tr>
             <tr>
@@ -9850,16 +9706,46 @@ interface RTCQuicStream {
               "idl-def-RTCQuicStreamState.closing">closing</code></dfn></td>
               <td>
                 <p>The procedure to close down the QUIC stream has started.
-                The <code>reset</code> method has been called, causing a
-                RST_STREAM frame to be queued for transmission and the
-                read and write buffers to be cleared.  Alternatively, the
-                <code>finish</code> method has been called, causing a
-                STREAM frame with the FIN flag set to be queued for transmission.
-                However, a RST_STREAM frame or STREAM frame with the FIN flag
-                set has not yet been received. Alternatively, the QUIC stream
-                has received a RST_STREAM frame (causing the read and write
-                buffers to be cleared) or a STREAM frame with the
-                FIN flag set.</p>
+                The following events cause this state:</p>
+                <ol>
+                  <li>The <code>reset</code> method has been called, causing a
+                  RST_STREAM frame to be queued for transmission and the
+                  read and write buffers to be cleared.</li>
+                  <li>The <code><a>RTCQuicStream</a></code>'s currently associated
+                  <code>WritableStreamDefaultWriter</code> instance's <code>close</code>
+                  method has been called, causing a STREAM frame with the FIN flag set
+                  to be queued for transmission. However, a RST_STREAM frame or STREAM
+                  frame with the FIN flag set has not yet been received.</li>
+                  <li>The QUIC stream has received a STREAM frame with the FIN flag set
+                  in which case the <code><a>RTCQuicStream</a></code>'s associated
+                  <a>[[\ReadableStreamController]]</a>
+                  <em class="rfc2119" title="MUST">MUST</em> be closed.</li>
+                  <li>The QUIC stream has received a RST_STREAM frame in which case
+                  the following procedure <em class="rfc2119" title="MUST">MUST</em> be
+                  followed:
+                  <ol>
+                    <li>Let <var>stream</var> be the associated
+                    <code><a>RTCQuicStream</a></code> instance.</li>
+                    <li>Let <var>writableStreamReady</var> be the <var>stream</var>'s
+                    <a>[[\ReadableStreamPromise]]</a> slot.</li>
+                    <li>Let <var>readableStreamReady</var> be the <var>stream</var>'s
+                    <a>[[\ReadableStreamPromise]]</a> slot.</li>
+                    <li>If <var>writableStreamReady</var> is still pending, reject
+                    <var>writableStreamReady</var>.</li>
+                    <li>If <var>readableStreamReady</var> is still pending, reject
+                    <var>readableStreamReady</var>.</li>
+                    <li>Let <var>writableStreamController</var> be the <var>stream</var>'s
+                    <a>[[\WritableStreamController]]</a> slot.</li>
+                    <li>Let <var>readableStreamController</var> be the <var>stream</var>'s
+                    <a>[[\ReadableStreamController]]</a> slot.</li>
+                    <li>If <var>writableStreamController</var> has not been aborted or errored,
+                    error it by calling <code><var>writableStreamController</var>.error</code></li>
+                    <li>If <var>readableStreamController</var> has not been cancelled or errored,
+                    error it by calling <code><var>readableStreamController</var>.error</code></li>
+                    <li>Queue a RST_STREAM frame for transmission.</li>
+                  </ol>
+                  </li>
+                </ol>
               </td>
             </tr>
             <tr>
@@ -9867,24 +9753,38 @@ interface RTCQuicStream {
               "idl-def-RTCQuicStreamState.closed">closed</code></dfn></td>
               <td>
                 <p>The QUIC stream has been closed or could not be established.
-                A RST_STREAM frame has been received and a RST_STREAM frame
-                has been queued for transmission in response or a FIN flag
-                in a STREAM frame has been received and a FIN flag in a
-                STREAM frame has been queued for transmission in response.
-                Alternatively:</p>
+                The following events cause this state:</p>
+                <ol>
+                  <li>A RST_STREAM frame has been received and a RST_STREAM frame
+                  has been queued for transmission in response.</li>
+                  <li>A FIN flag in a STREAM frame has been received and a FIN flag in a
+                  STREAM frame has been queued for transmission in response.</li>
+                  <li>A RST_STREAM frame has been sent and a RST_STREAM
+                  frame or a STREAM frame within the FIN flag set has been
+                  received.</li>
+                  <li>A STREAM frame with the FIN flag set has been sent
+                  and a RST_STREAM frame has been received in which case
+                  the following procedure <em class="rfc2119" title="MUST">MUST</em> be
+                  followed:
                   <ol>
-                     <li>A RST_STREAM frame has been sent and a RST_STREAM
-                     frame or a STREAM frame within the FIN flag set has been
-                     received, OR</li>
-                     <li>A STREAM frame with the FIN flag set has been sent
-                     and a RST_STREAM frame has been received, OR</li>
-                     <li>A STREAM frame with the FIN flag set has been sent
-                     and a STREAM frame with the FIN flag set has been received.
-                     </li>
+                    <li>Let <var>stream</var> be the associated
+                    <code><a>RTCQuicStream</a></code> instance.</li>
+                    <li>Let <var>readableStreamReady</var> be the <var>stream</var>'s
+                    <a>[[\ReadableStreamPromise]]</a> slot.</li>
+                    <li>If <var>readableStreamReady</var> is still pending, reject
+                    <var>readableStreamReady</var>.</li>
+                    <li>Let <var>readableStreamController</var> be the <var>stream</var>'s
+                    <a>[[\ReadableStreamController]]</a> slot.</li>
+                    <li>If <var>readableStreamController</var> has not been cancelled or errored,
+                    error it by calling <code><var>readableStreamController</var>.error</code></li>
                   </ol>
-                <p>On transitioning to the <code>closed</code> state, the
-                <a>[[\Readable]]</a> and <a>[[\Writeable]]</a> slots are set to
-                <code>false</code>.</p>
+                  </li>
+                  <li>A STREAM frame with the FIN flag set has been sent
+                  and a STREAM frame with the FIN flag set has been received in which case
+                  the <code><a>RTCQuicStream</a></code>'s associated
+                  <a>[[\ReadableStreamController]]</a>
+                  <em class="rfc2119" title="MUST">MUST</em> be closed.</li>
+                </ol>
               </td>
             </tr>
           </tbody>

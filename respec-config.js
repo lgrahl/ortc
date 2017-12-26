@@ -665,6 +665,12 @@ var respecConfig = {
       ],
       "status": "29 October 2017 (work in progress)",
       "publisher": "W3C"
-    }
+    },
+    "STREAMS": {
+      "title": "Streams Standard",
+      "href": "https://streams.spec.whatwg.org",
+      "status": "Living Standard — Last Updated 17 November 2017",
+      "publisher": "WHATWG"
+    },
   }
 }
